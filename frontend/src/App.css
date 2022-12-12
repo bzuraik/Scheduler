@@ -1,0 +1,393 @@
+.App {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+h1 {
+  color: #3685C2;
+}
+
+#courses {
+  width: 350px;
+}
+
+.conflict {
+  outline: 2px solid #f44336;
+}
+
+#suggestionOptions, #daysSelect {
+  display: flex;
+  flex-flow: wrap;
+  margin-left: 10px;
+  width: 350px;
+}
+
+#daysSelect {
+  margin: 0px 20px;
+}
+
+.suggestionOptions {
+  display: flex;
+  align-items: center;
+  width: 170px;
+}
+
+input[type="text" i] {
+  text-align: center;
+  padding: 15px;
+  width: calc(50% - 50px);
+  margin: 10px;
+  border-radius: 30px;
+  border-width: 0;
+  background-color: #E9E9E9;
+}
+
+input[type="text" i]::placeholder {
+  text-align: center;
+  color: #A7A7A7;
+  font-size: 15px;
+}
+
+input[type="text" i]:focus::placeholder {
+  color: transparent;
+}
+
+.suggestionOptions input[type="radio" i] {
+  margin: 20px;
+  margin-left: 10px;
+  margin-right: 15px;
+  box-sizing: border-box;
+  appearance: none;
+  background: white;
+  box-shadow: 0 0 0 2px #5899CC;
+  border: 2px solid white;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+}
+
+.daysOption {
+  display: flex;
+}
+
+.daysOption input[type="checkbox" i] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.daysOption label {
+  display: inline-block;
+  text-align: center;
+  background-color: white;
+  margin: 0;
+  padding: 10px 15px;
+  width: 100%;
+  font-family: sans-serif, Arial;
+  font-size: 13px !important;
+  border: 1px solid #D9D9D9;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  margin: 0 !important;
+  transition: all 0.3s ease;
+}
+
+#daysSelect > .daysOption:first-child label {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left: 1px solid #D9D9D9;
+  border-right: 2px;
+}
+
+#daysSelect > .daysOption:last-child label {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-right: 1px solid #D9D9D9;
+  border-left: 0px;
+}
+
+.daysOption input[type="checkbox"]:checked + label {
+  color: white;
+  background-color:#5899CC;
+  border-color: #5899CC !important;
+  font-weight: bold;
+}
+
+.daysOption input[type="checkbox"]:disabled + label {
+  color: #D9D9D9;
+}
+
+.daysOption input[type="checkbox"]:checked:disabled + label {
+  color: #D9D9D9;
+  background-color: white;
+  border-color: #D9D9D9 !important;
+  font-weight: normal;
+}
+
+input[type='radio']:checked {
+  background: #5899CC;
+}
+
+input[type="radio" i] + label {
+  color: #515151;
+  margin-right: 15px;
+  font-size: 15px;
+}
+
+button {
+  border-width: 0px;
+  background: none;
+}
+
+#addCoursesBtn,
+#clearCoursesBtn,
+#addSuggestionsBtn,
+#clearSuggestionsBtn {
+  align-self: center;
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 50px;
+  background-color: #5899CC;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  width: 320px;
+}
+
+button:hover:not(:disabled) {
+  cursor: pointer;
+}
+
+#addCoursesBtn:disabled,
+#addSuggestionsBtn:disabled {
+  background-color: #98CAF1;
+}
+
+#clearCoursesBtn,
+#clearSuggestionsBtn {
+  background-color: #F24343;
+}
+
+#clearCoursesBtn:disabled,
+#clearSuggestionsBtn:disabled {
+  background-color: #DD8D8D;
+}
+
+.calendar_default_main > div:nth-child(2) {
+  height: 96% !important;
+  overflow-y: scroll !important; 
+}
+
+.calendarToggleBtn > label.calendarToggleBtnInner{
+  margin: 0px;
+  width: 140px;
+  height: 30px;
+  border: 3px solid #E9E9E9;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.calendarToggleBtn > label.calendarToggleBtnInner:before{
+  cursor: pointer;
+  content: "Exams";
+  position: absolute;
+  font-size: 12px;
+  font-weight: 500;
+  top: 7px;
+  right: 20px;
+}
+
+.calendarToggleBtn > label.calendarToggleBtnInner:after{
+  cursor: pointer;
+  content: "Courses";
+  width: 70px;
+  height: 16px;
+  background: #60BD35;
+  color: white;
+  border-radius: 8px;
+  position: absolute;
+  font-size: 12px;
+  left: 2px;
+  top: 2px;
+  text-align: center;
+  transition: all 0.3s ease;
+  padding: 5px 0px;
+}
+
+.calendarToggleBtn input[type="checkbox"]{
+  position: absolute;
+  appearance: none;
+}
+
+.calendarToggleBtn input[type="checkbox"]:checked + label.calendarToggleBtnInner:before{
+  cursor: pointer;
+  font-size: 12px;
+  content: "Courses";
+  right: auto;
+  left: 12px;
+}
+
+.calendarToggleBtn input[type="checkbox"]:checked + label.calendarToggleBtnInner:after{
+  cursor: pointer;
+  font-size: 12px;
+  content: "Exams";
+  left: 68px;
+  background: #60BD35;
+  color: white;
+}
+
+#openModalBtn {
+  margin-left: 10px;
+  --b: 3px;
+  width: 15px;
+  aspect-ratio: 1;
+  border: 7px solid #5899CC;
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#5899CC 90deg,#fff 0) 
+    calc(100% + var(--b)/2) calc(100% + var(--b)/2)/
+    calc(50%  + var(--b))   calc(50%  + var(--b));
+  border-radius: 50%;
+}
+
+#searchBar {
+  display: flex;
+  border-radius: 30px;
+  width: 250px;
+  background: #E9E9E9;
+}
+
+#searchBar > input[type="text"] {
+  text-align: left;
+  text-indent: 10px;
+  width: 180px;
+  border: 1px solid transparent;
+  margin: 0;
+  padding: 15px;
+}
+
+#searchBar > input[type="text"]::placeholder {
+  text-align: left;
+  color: #A7A7A7;
+}
+
+#searchBar > input[type="text"]:focus::placeholder {
+  color: transparent;
+}
+
+#searchBar > button {
+  overflow: hidden;
+  width: 40px;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+  text-indent: -999px;
+}
+
+#searchBar > button:hover {
+  opacity: 1;
+}
+
+#searchBar > input[type="text"]:focus {
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.section {
+  display: flex;
+  margin-bottom: 30px;
+  padding: 30px;
+  border-radius: 45px;
+  border: 1px solid #63baff;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+}
+
+.meeting {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #A7A7A7;
+  padding: 0px 30px;
+  font-weight: 300;
+}
+
+.meeting > div {
+  margin: 5px 0px;
+}
+
+.sectionName {
+  font-weight: bold;
+  font-size: large;
+}
+
+b {
+  font-weight: 500;
+}
+
+.chosenSection {
+  background-color: #CCE7FC;
+  border: 1px solid #3685C2;
+}
+
+#addSectionBtn {
+  margin-top: -20px;
+  margin-right: 95px;
+  padding: 15px;
+  border-radius: 30px;
+  background-color: #5899CC;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  width: 150px;
+}
+
+#modalActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#addSectionBtn:disabled {
+  background-color: #CCE7FC;
+}
+
+.modalMessage {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+}
+
+.errorMessage {
+  color: #C50000;
+  opacity: 1;
+}
+
+#courseSectionHeader {
+  display: flex;
+  align-items: center;
+}
+
+.error-course {
+  left: 68px;
+  outline: 1px solid #DF0000;
+  background-color: #FFC4C4;
+  color: #C50000;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
+  padding-left: 10%;
+  padding-right: 10%;
+}

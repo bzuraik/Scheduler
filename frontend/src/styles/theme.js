@@ -1,0 +1,2 @@
+export const COURSE_COLORS = ['#EEFFA8', '#B8FFC7', '#F0C4FB', '#CDF6FF', '#FFB6B6'];
+export const SECONDARY_BACKGROUND_COLOR = '#E9E9E9';
