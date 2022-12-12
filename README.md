@@ -1,16 +1,16 @@
-#Scheduler
+# Scheduler
 
 This Course Scheduler makes it easy for students to plan their course schedules at the University of Guelph. With a simple and intuitive interface, students can search for courses offered by the university and generate a personalized schedule that meets their needs. The scheduler also offers suggestions for courses based on factors such as the student's preferred time of day for classes and their desire to avoid exams.
 
 You can visit the website here https://35.211.75.173
 
-#Tech Stack:
+## Tech Stack
  - Backend: Python ( flask )
- - Frontend: JavaScript ( react.js )
+ - Frontend: HTML, CSS and JavaScript ( react.js )
 
-#Features:
+## Features
   - Search for courses by Code and section
-  - conflicts between courses and exams indicator
+  - Conflicts between courses and exams indicator
   - Course suggestions
     ex.
      - Certain days off
@@ -18,9 +18,9 @@ You can visit the website here https://35.211.75.173
      - Morning/Evening courses
   - Search courses by name only, and a list of section will show to pick from.
 
-#Usage:
+## Usage
 
-Search by Course Code and section
+### Search by Course Code and section
   1. Add up to 5 courses in the Courses pills(eg. CIS1500*0102, CIS1500*0101, CIS2750*0101, ACCT1220*0101 )
   2. Click on the Add Courses button to generate the schedule
 
@@ -28,7 +28,7 @@ Search by Course Code and section
 
 
 
-Search By course code only and the sections will be displayed
+### Search By course code only and the sections will be displayed
   1. Click on the blue plus sign next to Courses on the top left of the page, a modal will open
   2. search for the course by entering the code only ( eg. CIS2750 )
   3. pick the section that you want.
